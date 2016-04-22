@@ -1,0 +1,206 @@
+Daily Exercise : Initially go through all code samples , class work & then attempt assignments.
+
+Day 1
+
+1. Accept 2 numbers as command line arguments from user. If user supplies less than 2 arguments supply error message & terminate. . If all correct, compute avarage & display the same.
+2. Redo above assignement by replacing command line arguments by user inputs via scanner. If arguments are not numbers , supply error message & terminate.
+3. Accept 2 numbers from user using scanner. Compare 2 numbers & print comparison results. 
+4. Display food menu to user. User will select items from menu along with the quantity. (eg 1. Dosa 2. Samosa .......10 . Generate Bill ) When user enters 'Generate Bill' option, display total bill & exit.
+
+
+Day 2
+0. Replace for by for-each in TestBoxArrayScanner.java (for initializing the boxes , line 13-17), observe n conclude.
+1.
+Consider the following code sample. What will happen? MUST understand with memory diagrams.
+
+class Tank {
+  private int level;
+  Tank(int l)
+   {
+     level=l;
+   }
+  public void setLevel(int level1)
+  {
+    level=level1;
+  }
+  public int getLevel()
+  {
+    return level;
+  }
+}	
+
+public class Assignment {
+  public static void main(String[] args) {
+    Tank t1 = new Tank(10);
+    Tank t2 = new Tank(20);
+   
+    s.o.p("1: t1.level: " + t1.getLevel() +
+          ", t2.level: " + t2.getLevel());
+    t1 = t2;
+    s.o.p("2: t1.level: " + t1.getLevel() +
+          ", t2.level: " + t2.getLevel());
+    t1.setLevel(27);
+     s.o.p("3: t1.level: " + t1.getLevel() +
+          ", t2.level: " + t2.getLevel());
+    t2.setLevel(t1.getLevel()+10);
+     s.o.p("4: t1.level: " + t1.getLevel() +
+          ", t2.level: " + t2.getLevel());
+  }
+}
+
+2. Create Java Application for the following .
+Create Point class Point2D in package "geom"  : for representing a point in x-y co-ordinate system.
+
+2.1Create a parameterized constructor to accept x & y co-ords.
+Add show method to Point2D class : to return  the x & y coords .(public String show())
+
+2.2 Add isEqual method to Point2D class : boolean returning method : must ret. true if both points are having same x,y co-ords or false otherwise. : 
+
+2.3 Add a method to Point2D class -- to create and return new point having given x & y offset.
+(eg Point createNewPoint(int xOffset,int yOffset))
+
+2.4 Write TestPoint class with a main method in the separate package "tester"
+
+2.5 Create 2 points by taking data from user(scanner). Use show method to display the co-ords of 2 points.
+
+2.6 Use isEqual method : to check the equality of 2 points.
+
+2.7 Accept x offset & y offset from user & call createNewPoint method.Display x,y co-ords of new point.
+
+2.8 Create TestPoints class with main method.
+Prompt user for --no of points to be created.
+Create suitable array & store points.
+Display all points.
+Display the value of largest x-coord & y-coord.
+
+
+Day 3
+
+1. Take earlier Point2D class & make following changes.
+
+In Point2D class(in "geom" package) add -- 
+1.1 double calcDistance(Point2D p) --which will return distance between current point & supplied point
+Distance formula
+sqrt of ((x2-x1) ^2 + (y2-y1)^2)
+Hint : Use java.lang.Math class methods --Math.sqrt & Math.pow for the computation.
+
+1.2 Replace "show" method by overriding form of "toString" 
+
+1.2.5 Replace "isEqual" method by overriding form of "equals" --equality based upon x & y co-ordinates.
+
+1.3 Write TestPoints class in "tester" package.
+Attach scanner & create 2 points
+Display x, y co-ordinates using "toString"
+Display distance between 2 points using "calcDistance" method.
+
+1.4 Create a class in "geom" package to represent 3D point(x,y,z co-ordinates)
+Supply constructor & toString 
+
+1.5 Write TestPoints2 class in "tester" package.
+Attach scanner & create 2  3D points
+Display x, y, z co-ordinates using "toString"(overriding form)
+Override equals method forther --based upon x,y,z co ordinates.
+
+2. Solve test_override.A (compulsory)
+To understand -- method overriding & private , final , static methods.
+Data member resolving , up-casting & down casting.
+
+Day 4 
+1. Unserstand & test inheritance n polymorphism .
+1.1 Create shapes package & add following classes to it.
+Shape -- Add a private data member "name"(name of the shape) & add suitable constructor.
+abstract class having abstract method draw & erase.
+Circle,Rectangle,Square,Triangle -- concrete sub classes.
+eg Circle's draw
+public void draw() { sop("drawing circle") }
+& similar erase method
+
+Create similar overriding methods in all other sub classes.
+Must use @Override annotation properly.
+
+1.2 Create utils package & add RandomShapeFactory class to it
+It should have
+A random no generator(java.util.Random class instance)
+A static method to generate random shape.
+This method should return randomly generated shape instance to the caller(use nextInt(n) method of Random class.
+
+1.3 Create tester package & add class TestShapes.
+Create 10 shapes & store them suitably.
+Using Scanner prompt to User
+Enter command
+Possible commands
+draw shapes --draw all shapes
+draw circles --- draw all circles
+draw triangles ---draw all triangles 
+etc.
+erase shapes --erase all shapes.
+erase circle -- erase all circles
+etc.
+exit --terminate .
+
+Day 5
+1.Create Java application for fixed stack & growable stack of employees functionality.(Hint : Stack interface & implementation class FixedStack & GrowableStack) 
+
+From tester class --- display Menu
+1 -- Choose Fixed Stack
+2 -- Choose Growable Stack
+Accept following options only after initial selection.
+3 -- Push data 
+4 --- Pop data
+5 -- Exit
+Steps
+0. com.app.core Emp --id,name,sal
+1. Stack i/f --- 
+void push(Emp e);
+Emp pop();
+int STACK_SIZE=10;
+2.class FixedStack imple Stack
+D.M --- Emp[] emps,top
+constr -- create array n init top
+3. class GrowableStack imple Stack
+4. TestStack
+main -- scanner.
+
+
+2. Must understand all code samples regarding method overriding.
+2.1 Super class & sub class having same data member name
+2.2 Super class & sub class having overridden method & overriding method
+2.3 private or static or final methods can't be overridden(i.e cant supply run time polymorphism)
+
+3. Take a look at test_protected & test_protected1 .Observe & conclude.
+
+Day 6
+
+1. 
+Create Customer class  for storing the customer details of the Online e-shop utility. Online part of e-shop will be later developed using the web-appln in advanced java.
+
+2.0 Create custom exception class.
+
+Details about Customer :
+(custId(int --auto increment) ,email(string : primary key),password(string),dateOfBirth(Date),regAmount(double)
+
+2.1Add in Customer class -- equals method(email based)
+
+2.2 Add ValidationUtils class in utils package, to check validation rules.
+
+ (should not handle exception BUT delegate it to caller)
+
+2.2 Validations : 1. Customer's DOB : Between 1st Jan 1985- 31st Dec 1995
+2.3 email must contain : @ character, min length 7 , max length =20
+
+2.4 password : min length 5 , max length =10, should contain either -- * or $ or # to increase password strength.
+
+3.
+
+Create RegisterCustomer -- a tester class with main(..) method .Accept inputs --email, password & DOB from user , create customer instance in case of no validation errors.
+Otherwise --use single try-catch block to display error.
+
+
+
+
+
+
+
+
+
+

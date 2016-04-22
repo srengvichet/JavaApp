@@ -1,0 +1,61 @@
+Revise
+Interface & implementation classes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Test Interfaces
+
+Direct referencing 
+
+
+Dynamic method dispatch via i/f.
+I/F ref can directly(w/o type casting) refer to ANY imple class instance(via up-casting) BUT it can access only those members declared in i/f
+Passes IS-A test (via instanceof)
+
+i/f instance ---i/f ref ---> imple cls instance
+
+
+toString --auto invocation
+test_override samples
+
+In case of duplicate data member , in inh hierarchy
+Type of reference determines --- which data member will be accessed.
+Type of object determines --which method gets invoked.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------
+Exception handling

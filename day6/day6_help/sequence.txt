@@ -1,0 +1,116 @@
+Revise 
+exc handling flow
+inh hierarchy
+checked vs un checked exc
+javac --diff.
+javac forces handling of the checked excs
+2 ways --- actual handling -- wrap it in try-catch
+throws --- keyword
+meth declaration
+mandatory --un handled chked exc.
+meANING--- method may raise d exc -- method is not handling exc --delegated to d caller.
+
+
+try,catch,finally,throw,throws, custom exc
+throw Throwable inst;
+
+eg : public class MyExc extends Throwable{}
+throw new MyExc();
+public class MyExc extends Exception{} ---reco.
+public class MyExc extends Error{}
+public class MyExc extends String{}
+public class MyExc extends Emp{}
+throw new MyExc();
+public class MyExc extends NullPointerException{}
+
+
+
+throw vs throws
+
+
+Simple application combining all of above
+monitor speed of a vehicle --
+within range -- no exc
+outside range -- throw new SpeedOutOfRangeExc("too high");
+1. custom exc class
+public class SpeedOutOfRangeException extends Exception
+{
+   public SpeedOutOfRangeException(String mesg)
+   {
+      super(mesg);
+    }
+}
+
+
+Better scenario for applying exc handling
+1. custom exc 
+AccountHandlingException
+2. Bank i/f
+Account createAccount(String name,String type,double balance,Date creationDate) throws AccountHandlingException;
+
+void deposit(double amt);
+void withdraw(double amt) throws AccountHandlingException;
+void transferFunds(Account dest,double amt) throws AccountHandlingException;
+
+
+3.utils --ValidationUtils --- validation rules
+  public static void validateBalance(double bal) throws Exception
+validateType,validateDate
+
+4. BankAccount imple Bank
+
+
+
+
+
+
+
+
+
+
+regarding protected
+
+---------------------
+string handling
+
+immutability of String class objects
+== vs equals
+literal strings vs dyn created strings
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+wrappers
+
+date time handling
+
+enums
